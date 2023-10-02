@@ -50,7 +50,7 @@ class Puzzle1_Activity : AppCompatActivity() {
     }
 
     private fun init() {
-        gesture_detect_grid_view.apply {
+        puzzle1_grid_view.apply {
             numColumns = TOTAL_COLUMNS
             setOnSwipeListener(object : OnSwipeListener {
                 override fun onSwipe(direction: SwipeDirections, position: Int) {
@@ -76,13 +76,13 @@ class Puzzle1_Activity : AppCompatActivity() {
     }
 
     private fun setTileBoardDimensions() {
-        val observer = gesture_detect_grid_view.viewTreeObserver
+        val observer = puzzle1_grid_view.viewTreeObserver
         observer.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                gesture_detect_grid_view.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                puzzle1_grid_view.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val displayWidth = gesture_detect_grid_view.measuredWidth
-                val displayHeight = gesture_detect_grid_view.measuredHeight
+                val displayWidth = puzzle1_grid_view.measuredWidth
+                val displayHeight = puzzle1_grid_view.measuredHeight
                 val statusbarHeight = getStatusBarHeight(applicationContext)
                 val requiredHeight = displayHeight - statusbarHeight
 
@@ -130,7 +130,7 @@ class Puzzle1_Activity : AppCompatActivity() {
             tileImages.add(tileImage)
         }
 
-        gesture_detect_grid_view.adapter = TileImageAdapter(tileImages, boardColumnWidth, boardColumnHeight)
+        puzzle1_grid_view.adapter = TileImageAdapter(tileImages, boardColumnWidth, boardColumnHeight)
     }
 
     private fun displayToast(@StringRes textResId: Int) {
