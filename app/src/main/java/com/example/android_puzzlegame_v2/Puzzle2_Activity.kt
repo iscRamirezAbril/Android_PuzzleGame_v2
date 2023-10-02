@@ -8,14 +8,14 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android_puzzlegame_v2.GestureDetectGridView.OnSwipeListener
-import kotlinx.android.synthetic.main.activity_puzzle1.*
+import kotlinx.android.synthetic.main.activity_puzzle2.*
 import java.util.Random
 
-/*enum class SwipeDirections {
+enum class SwipeDirections {
     UP, DOWN, LEFT, RIGHT
-}*/
+}
 
-class Puzzle1_Activity : AppCompatActivity() {
+class Puzzle2_Activity : AppCompatActivity() {
     companion object {
         private const val TOTAL_COLUMNS = 3
         private const val DIMENSIONS = TOTAL_COLUMNS * TOTAL_COLUMNS
@@ -42,7 +42,7 @@ class Puzzle1_Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_puzzle1)
+        setContentView(R.layout.activity_puzzle2)
 
         init()
         scrambleTileBoard()
@@ -50,7 +50,7 @@ class Puzzle1_Activity : AppCompatActivity() {
     }
 
     private fun init() {
-        puzzle1_grid_view.apply {
+        puzzle2_grid_view.apply {
             numColumns = TOTAL_COLUMNS
             setOnSwipeListener(object : OnSwipeListener {
                 override fun onSwipe(direction: SwipeDirections, position: Int) {
@@ -76,13 +76,13 @@ class Puzzle1_Activity : AppCompatActivity() {
     }
 
     private fun setTileBoardDimensions() {
-        val observer = puzzle1_grid_view.viewTreeObserver
+        val observer = puzzle2_grid_view.viewTreeObserver
         observer.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                puzzle1_grid_view.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                puzzle2_grid_view.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val displayWidth = puzzle1_grid_view.measuredWidth
-                val displayHeight = puzzle1_grid_view.measuredHeight
+                val displayWidth = puzzle2_grid_view.measuredWidth
+                val displayHeight = puzzle2_grid_view.measuredHeight
                 val statusbarHeight = getStatusBarHeight(applicationContext)
                 val requiredHeight = displayHeight - statusbarHeight
 
@@ -116,21 +116,21 @@ class Puzzle1_Activity : AppCompatActivity() {
             tileImage = ImageView(this)
 
             when (i) {
-                0 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza1)
-                1 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza2)
-                2 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza3)
-                3 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza4)
-                4 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza5)
-                5 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza6)
-                6 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza7)
-                7 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza8)
-                8 -> tileImage.setBackgroundResource(R.drawable.rompecabezas1_pieza9)
+                0 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza1)
+                1 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza2)
+                2 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza3)
+                3 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza4)
+                4 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza5)
+                5 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza6)
+                6 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza7)
+                7 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza8)
+                8 -> tileImage.setBackgroundResource(R.drawable.rompecabezas2_pieza9)
             }
 
             tileImages.add(tileImage)
         }
 
-        puzzle1_grid_view.adapter = TileImageAdapter(tileImages, boardColumnWidth, boardColumnHeight)
+        puzzle2_grid_view.adapter = TileImageAdapter(tileImages, boardColumnWidth, boardColumnHeight)
     }
 
     private fun displayToast(@StringRes textResId: Int) {
