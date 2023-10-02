@@ -28,5 +28,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Puzzle3_Activity::class.java)
             startActivity(intent)
         }
+
+        btnPuzzle4.setOnClickListener {
+            val intent = Intent(this, Puzzle4_Activity::class.java)
+            startActivity(intent)
+        }
     }
 }
