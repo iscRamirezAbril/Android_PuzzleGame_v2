@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnPuzzle1.setOnClickListener {
-            val intent = Intent(this, PuzzleInstructionsActivity::class.java)
+            val intent = Intent(this, Puzzle1_Activity::class.java)
             startActivity(intent)
         }
     }
