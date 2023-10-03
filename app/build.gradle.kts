@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.android_puzzlegame_v2"
-        minSdk = 16
+        minSdk = 22
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
