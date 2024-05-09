@@ -1,5 +1,9 @@
 # Juego de rompecabezas 🎮
 
+<p align="center">
+  <img src="https://github.com/iscRamirezAbril/Android_PuzzleGame_v2/blob/master/images/img_petDrawing2.png" width = "250"/>
+</p>
+
 ### **|-----| Descripción |-----|**
 Proyecto de práctica para comprender la lógica del juego de rompecabezas
 
